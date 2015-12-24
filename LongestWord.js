@@ -4,8 +4,16 @@
 	return the first word from the string with that length. Ignore punctuation and assume sen will not be empty. 
 */
 
-function LongestWord(sen) { 
-
-  // code goes here  
-  return sen;         
-}
+  function LongestWord(sen) { 
+  var masWords = sen.split(/([.,&!?:… ])/);
+  var longWord = masWords[0];	
+  for (var i = 1; i < masWords.length; i++) {
+    if (masWords[i].length > longWord.length ) {
+    	longWord = masWords[i]; 
+    }
+  }
+  sen = longWord;
+  return sen;      
+} 
+//Test
+console.log(LongestWord("Long longer longest");
